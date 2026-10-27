@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CIA4001 Budget 2027 终极拍摄剧本 + 摄影师轮换调度表 (手机折叠版)</title>
+  <title>CIA4001 Budget 2027 终极拍摄剧本 (税务专家改版)</title>
   <style>
     :root {
       --ang-color: #2563eb;
@@ -73,7 +73,6 @@
       transition: all 0.3s ease;
     }
     
-    /* 新增：折叠控制条 */
     .filter-toggle-header {
       display: flex;
       justify-content: space-between;
@@ -105,7 +104,7 @@
 
     /* 折叠内容区 */
     #filterContent {
-      display: block; /* 默认展开 */
+      display: block;
     }
 
     .filter-group {
@@ -190,7 +189,7 @@
 
     .rotation-table {
       width: 100%;
-      min-width: 500px; /* 强制手机上可以左右滑动看表 */
+      min-width: 500px;
       border-collapse: collapse;
       font-size: 0.85rem;
     }
@@ -347,7 +346,7 @@
     }
 
     .dimmed {
-      display: none; /* 手机版直接隐藏非自己的台词，省空间 */
+      display: none;
     }
 
     .highlight-cam {
@@ -376,7 +375,7 @@
 
 <header>
   <h1>🎬 CIA4001 Budget 2027 终极拍摄剧本</h1>
-  <p>本地互拍轮换 + 欧洲协同 | 全项 4-Excellent 冲刺版</p>
+  <p>本地互拍轮换 + 远程协同 | 全项 4-Excellent 冲刺版</p>
 </header>
 
 <div class="container">
@@ -397,7 +396,7 @@
           <button class="filter-btn btn-wong" onclick="filterActor('wong')">🔴 Wong Chun Kit</button>
           <button class="filter-btn btn-jasper" onclick="filterActor('jasper')">🟢 Jasper Chong</button>
           <button class="filter-btn btn-samuel" onclick="filterActor('samuel')">🟠 Samuel Fong</button>
-          <button class="filter-btn btn-vincent" onclick="filterActor('vincent')">🟣 Vincent Chow</button>
+          <button class="filter-btn btn-vincent" onclick="filterActor('vincent')">🟣 Vincent Chow (税务专家)</button>
         </div>
       </div>
       <div class="filter-group" style="margin-top: 10px;">
@@ -407,15 +406,15 @@
           <button class="filter-btn btn-wong" onclick="filterCam('wong')">📷 Wong 掌镜的镜头</button>
           <button class="filter-btn btn-jasper" onclick="filterCam('jasper')">📷 Jasper 掌镜的镜头</button>
           <button class="filter-btn btn-samuel" onclick="filterCam('samuel')">📷 Samuel 掌镜的镜头</button>
-          <button class="filter-btn btn-vincent" onclick="filterCam('friend')">📷 欧洲朋友拍摄部分</button>
+          <button class="filter-btn btn-vincent" onclick="filterCam('friend')">📷 远程协助拍摄部分</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 4+1 互拍排班总览表 (支持左右滑动) -->
+  <!-- 4+1 互拍排班总览表 -->
   <div class="schedule-card">
-    <h3>📋 本地 4人 + 欧洲 1人：拍摄调度表</h3>
+    <h3>📋 本地 4人 + 远程连线 1人：拍摄调度表</h3>
     <div style="overflow-x: auto;">
       <table class="rotation-table">
         <thead>
@@ -437,9 +436,9 @@
             <td><strong>A机(全景/急推)：</strong><span class="badge badge-ang">Ang</span><br><strong>B机(过肩)：</strong><span class="badge badge-wong">Wong</span></td>
           </tr>
           <tr>
-            <td><strong>C：欧洲卫星连线</strong></td>
-            <td><span class="badge badge-vincent">Vincent</span></td>
-            <td><strong>掌镜：</strong><span class="badge badge-vincent">欧洲朋友</span></td>
+            <td><strong>C：远程视频连线</strong></td>
+            <td><span class="badge badge-vincent">Vincent (税务专家)</span></td>
+            <td><strong>掌镜：</strong><span class="badge badge-vincent">远程协助的朋友</span></td>
           </tr>
           <tr>
             <td><strong>D：单人走拍 & 结尾</strong></td>
@@ -454,7 +453,7 @@
   <!-- ==================== 第一幕 ==================== -->
   <div class="act-section">
     <div class="act-header">
-      <h2>第一幕：爆笑开场与欧亚跨国连线</h2>
+      <h2>第一幕：爆笑开场与专家视频连线</h2>
       <span class="time-pill">⏱️ 0:00 – 0:55</span>
     </div>
     <div class="act-body">
@@ -485,7 +484,7 @@
           <span class="action-note">（看 A机 Jasper 的镜头，微笑）</span>
         </div>
         <div class="speech-en">
-          "Good evening and welcome to <em>Kopitiam & Global Tax Talk Live</em>! Malaysia’s Budget 2027 has just been tabled with a record <strong>RM510 billion</strong> total allocation, projected GDP growth of <strong>4.2% to 5.2%</strong>, and a narrowing fiscal deficit target of <strong>3.3%</strong>. Today, we critically review six major changes, how they affect Malaysian individuals and companies, and what Budget 2028 must focus on next!"
+          "Good evening and welcome to <em>Tax Talk Live</em>! Malaysia’s Budget 2027 has just been tabled with a record <strong>RM510 billion</strong> total allocation, projected GDP growth of <strong>4.2% to 5.2%</strong>, and a narrowing fiscal deficit target of <strong>3.3%</strong>. Today, we critically review six major changes, how they affect Malaysian individuals and companies, and what Budget 2028 must focus on next!"
         </div>
       </div>
 
@@ -495,7 +494,7 @@
           <span class="action-note">（拿起放大镜，看 B机 Samuel 的镜头）</span>
         </div>
         <div class="speech-en">
-          "Joining us live from our local Kopitiam are M40 taxpayer Jasper and SME owner Boss Samuel—and dialing in live via satellite all the way from Europe is our Malaysian expat executive and international tax advisor, Vincent!"
+          "Joining us live from our local Kopitiam are M40 taxpayer Jasper and SME owner Boss Samuel—and dialing in remotely is our resident Tax Professional, Vincent!"
         </div>
       </div>
 
@@ -507,7 +506,7 @@
             <span class="badge badge-cam">摄影师：</span>
             <span class="badge badge-ang">A机: Ang</span>
             <span class="badge badge-wong">B机: Wong</span>
-            <span class="badge badge-vincent">欧洲辅助: 朋友</span>
+            <span class="badge badge-vincent">专家录制: 朋友</span>
           </div>
         </div>
         <div class="how-to-shoot">
@@ -516,7 +515,7 @@
             <li><strong>A机(Ang)：</strong>站正前方拍中景。当 Jasper 讲完台词，手指在屏幕快速放大 (Crash Zoom In) 怼脸拍 Samuel！</li>
             <li><strong>B机(Wong)：</strong>越过 Samuel 肩膀拍 Jasper。</li>
           </ul>
-          <div style="margin-top:6px;"><span class="cue-tag tag-sfx">🔊 SFX: 卫星滴滴声 + 刮碟声</span></div>
+          <div style="margin-top:6px;"><span class="cue-tag tag-sfx">🔊 SFX: 视频连线滴滴声 + 刮碟声</span></div>
         </div>
       </div>
 
@@ -571,12 +570,6 @@
             <span class="badge badge-ang">拍茶室: Ang</span>
           </div>
         </div>
-        <div class="how-to-shoot">
-          <strong>📐 怎么拍：</strong>
-          <ul>
-            <li><strong>Ang</strong> 去拍茶室桌上的计算器按下 "1600"，镜头慢慢往上摇到 Jasper 笑脸。</li>
-          </ul>
-        </div>
       </div>
 
       <div class="dialogue-line line-ang" data-speaker="ang">
@@ -601,20 +594,21 @@
       <!-- 镜头 5 -->
       <div class="shot-card" data-cam="friend">
         <div class="shot-header">
-          <span class="shot-title">🎥 镜头 5：欧洲连线 — 批判分析</span>
+          <span class="shot-title">🎥 镜头 5：税务专家连线 — 批判分析</span>
           <div class="crew-box">
             <span class="badge badge-cam">摄影师：</span>
-            <span class="badge badge-vincent">欧洲朋友掌镜</span>
+            <span class="badge badge-vincent">朋友协助掌镜 (正面中景)</span>
           </div>
         </div>
       </div>
 
       <div class="dialogue-line line-vincent" data-speaker="vincent">
         <div class="speaker-meta">
-          <span class="badge badge-vincent">Vincent Chow (驻欧洲高管)</span>
+          <span class="badge badge-vincent">Vincent Chow (税务专家)</span>
+          <span class="action-note">（专业姿态，客观分析）</span>
         </div>
         <div class="speech-en">
-          "Hold on, Jasper! Look at how the government cross-subsidises that cut. The top <strong>30% marginal tax rate</strong> now triggers earlier at <strong>RM1 million</strong> of chargeable income instead of RM2 million! For a top executive earning RM2 million, that is an extra <strong>RM20,000 in tax</strong> every year. Critically speaking, this widens the gap with Singapore’s 24% top rate, making it harder to attract global C-suite talent back to Malaysia—while B40 households below the tax threshold gain zero direct benefit from tax cuts!"
+          "Hold on, Jasper! Look at how the government cross-subsidises that cut. The top <strong>30% marginal tax rate</strong> now triggers earlier at <strong>RM1 million</strong> of chargeable income instead of RM2 million. From a tax planning perspective, this widens the gap with Singapore’s 24% top rate, making it harder to attract global C-suite talent—while B40 households below the tax threshold gain zero direct benefit from these tax cuts!"
         </div>
       </div>
 
@@ -700,12 +694,6 @@
             <span class="badge badge-jasper">拍 Wong: Jasper</span>
           </div>
         </div>
-        <div class="how-to-shoot">
-          <strong>📐 怎么拍：</strong>
-          <ul>
-            <li><strong>Ang</strong> 蹲下由下往上仰拍 Samuel；接着马上站到高处往下俯拍 Samuel。</li>
-          </ul>
-        </div>
       </div>
 
       <div class="dialogue-line line-samuel" data-speaker="samuel">
@@ -730,11 +718,11 @@
       <!-- 镜头 11 -->
       <div class="shot-card" data-cam="wong friend jasper">
         <div class="shot-header">
-          <span class="shot-title">🎥 镜头 11：薪水发愁 ➔ 欧洲分析 ➔ 亮法案</span>
+          <span class="shot-title">🎥 镜头 11：薪水发愁 ➔ 专家分析 ➔ 亮法案</span>
           <div class="crew-box">
             <span class="badge badge-cam">摄影师：</span>
             <span class="badge badge-wong">拍 Samuel: Wong</span>
-            <span class="badge badge-vincent">欧洲侧拍: 朋友</span>
+            <span class="badge badge-vincent">专家侧拍: 朋友</span>
             <span class="badge badge-jasper">拍 Wong: Jasper</span>
           </div>
         </div>
@@ -752,10 +740,11 @@
 
       <div class="dialogue-line line-vincent" data-speaker="vincent">
         <div class="speaker-meta">
-          <span class="badge badge-vincent">Vincent Chow (驻欧洲高管)</span>
+          <span class="badge badge-vincent">Vincent Chow (税务专家)</span>
+          <span class="action-note">（侧面掌镜，专业顾问视角）</span>
         </div>
         <div class="speech-en">
-          "From an international governance view, tying corporate tax deductibility to bank-channel payroll is a brilliant anti-evasion rule. It eliminates phantom workers, ensures foreign and local workers receive statutory minimum wages, and creates an auditable trail for EPF, SOCSO, and LHDN. And looking at <strong>Change 6: Targeted Corporate Deductions</strong>, employers also get a tax deduction from 2027 to 2028 for repaying full-time employees' <strong>PTPTN student loans</strong>, alongside a <strong>100% Green Technology Investment Tax Allowance</strong> extended until 2030!"
+          "From a tax compliance standpoint, tying corporate tax deductibility to bank-channel payroll is a brilliant anti-evasion rule. It eliminates phantom workers, ensures foreign and local workers receive statutory minimum wages, and creates an auditable trail for EPF, SOCSO, and LHDN. And looking at <strong>Change 6: Targeted Corporate Deductions</strong>, employers also get a tax deduction from 2027 to 2028 for repaying full-time employees' <strong>PTPTN student loans</strong>, alongside a <strong>100% Green Technology Investment Tax Allowance</strong> extended until 2030!"
         </div>
       </div>
 
@@ -780,7 +769,6 @@
     </div>
     <div class="act-body">
 
-      <!-- 镜头 12 -->
       <div class="shot-card" data-cam="ang jasper friend">
         <div class="shot-header">
           <span class="shot-title">🎥 镜头 12：五宫格全员同框 (后期拼合)</span>
@@ -795,7 +783,7 @@
         <div class="speech-en">"So how do these changes affect <strong>Malaysian Individuals</strong> overall? M40 taxpayers gain up to RM1,600 in tax savings, modernised reliefs for AI, pets, and parental care, and over RM11,000 in stamp duty savings on first homes up to RM750,000—while B40 and gig workers benefit from the RM2,000 minimum wage, <strong>RM16 billion in STR and SARA cash aid</strong>, and expanded <em>Lindung Kendiri</em> SOCSO relief."</div>
       </div>
       <div class="dialogue-line line-vincent" data-speaker="vincent">
-        <div class="speaker-meta"><span class="badge badge-vincent">Vincent Chow (欧洲)</span></div>
+        <div class="speaker-meta"><span class="badge badge-vincent">Vincent Chow (税务专家)</span></div>
         <div class="speech-en">"However, individuals still face frozen medical and lifestyle relief caps amidst high healthcare inflation, potential personal tax liabilities on employer PTPTN repayments, and a heavier 30% tax burden for high earners above RM1 million."</div>
       </div>
       <div class="dialogue-line line-samuel" data-speaker="samuel">
@@ -818,7 +806,6 @@
     </div>
     <div class="act-body">
 
-      <!-- 镜头 13 -->
       <div class="shot-card" data-cam="ang jasper wong samuel friend">
         <div class="shot-header">
           <span class="shot-title">🎥 镜头 13：动态行走跟拍 (倒退走互拍)</span>
@@ -843,8 +830,8 @@
         <div class="speech-en">"<strong>Third, for Companies: Raise the MSME qualifying paid-up capital threshold from RM2.5 million to RM5 million and introduce a 20% Mid-Tier Company tax band.</strong> <em>The Reason:</em> Currently, exceeding RM2.5 million in paid-up capital by even RM1 forces a company’s tax rate to jump from 14% and 16% straight to 24%, creating a tax cliff that discourages SMEs from injecting equity to scale up!"</div>
       </div>
       <div class="dialogue-line line-vincent" data-speaker="vincent">
-        <div class="speaker-meta"><span class="badge badge-vincent">Vincent Chow (摄影: 欧洲朋友倒退拍)</span></div>
-        <div class="speech-en">"<strong>Fourth, for Companies: Grant a 200% Double Tax Deduction on incremental minimum wage transition costs and corporate AI software subscriptions.</strong> <em>The Reason:</em> While individuals received an AI tax relief in Budget 2027, SMEs need direct operating-expense tax incentives to adopt digital productivity tools and absorb the RM2,000 minimum wage without passing price hikes onto Malaysian consumers!"</div>
+        <div class="speaker-meta"><span class="badge badge-vincent">Vincent Chow (摄影: 朋友倒退拍)</span></div>
+        <div class="speech-en">"<strong>Fourth, for Companies: Grant a 200% Double Tax Deduction on incremental minimum wage transition costs and corporate AI software subscriptions.</strong> <em>The Reason:</em> While individuals received an AI tax relief in Budget 2027, SMEs need direct operating-expense tax incentives to adopt digital productivity tools and absorb the RM2,000 minimum wage without passing price hikes onto consumers!"</div>
       </div>
 
     </div>
@@ -853,23 +840,23 @@
   <!-- ==================== 第六幕 ==================== -->
   <div class="act-section">
     <div class="act-header">
-      <h2>第六幕：欧亚跨屏击掌收尾</h2>
+      <h2>第六幕：跨屏击掌收尾</h2>
       <span class="time-pill">⏱️ 7:45 – 8:00</span>
     </div>
     <div class="act-body">
 
       <div class="shot-card" data-cam="friend">
         <div class="shot-header">
-          <span class="shot-title">🎥 镜头 14：双屏跨洲击掌 (固定机位)</span>
+          <span class="shot-title">🎥 镜头 14：双屏连线击掌 (固定机位)</span>
           <div class="crew-box">
-            <span class="badge badge-cam">本地把手机架桌子上，4人向右击掌；欧洲向左击掌。</span>
+            <span class="badge badge-cam">本地把手机架桌子上，4人向右击掌；专家向左击掌。</span>
           </div>
         </div>
       </div>
 
       <div class="dialogue-line line-all" data-speaker="all">
         <div class="speaker-meta"><span class="badge badge-all">🌟 5人齐声 (All Together)</span></div>
-        <div class="speech-en">"From Malaysia to Europe—work smart, stay tax-compliant, and see you in Budget 2028! Thank you!"</div>
+        <div class="speech-en">"Work smart, stay tax-compliant, and see you in Budget 2028! Thank you!"</div>
       </div>
 
     </div>
@@ -878,7 +865,6 @@
 </div>
 
 <script>
-  // 折叠/展开 面板逻辑
   function toggleFilters() {
     const content = document.getElementById('filterContent');
     const icon = document.getElementById('filterIcon');
@@ -895,22 +881,19 @@
     }
   }
 
-  // 重置
   function resetFilter() {
     document.querySelectorAll('.dialogue-line, .shot-card').forEach(el => {
       el.classList.remove('dimmed', 'highlight-cam');
     });
-    // 点击按钮后自动折叠菜单(提升手机体验)
     const content = document.getElementById('filterContent');
     if (window.innerWidth < 768 && content.style.display !== 'none') {
         toggleFilters();
     }
   }
 
-  // 模式1：台词过滤
   function filterActor(member) {
     document.querySelectorAll('.dialogue-line').forEach(line => {
-      line.classList.remove('dimmed'); // 先重置
+      line.classList.remove('dimmed'); 
       const speaker = line.getAttribute('data-speaker');
       if (member !== 'all' && speaker !== member && speaker !== 'all') {
         line.classList.add('dimmed');
@@ -920,11 +903,10 @@
     if(member !== 'all') collapseMenuOnMobile();
   }
 
-  // 模式2：摄影师过滤
   function filterCam(cameraman) {
     document.querySelectorAll('.dialogue-line').forEach(line => line.classList.remove('dimmed'));
     document.querySelectorAll('.shot-card').forEach(card => {
-      card.classList.remove('dimmed', 'highlight-cam'); // 先重置
+      card.classList.remove('dimmed', 'highlight-cam'); 
       const cams = card.getAttribute('data-cam') || '';
       if (cams.includes(cameraman)) {
         card.classList.add('highlight-cam');
@@ -935,7 +917,6 @@
     collapseMenuOnMobile();
   }
   
-  // 手机端点完按钮后自动收起菜单
   function collapseMenuOnMobile() {
       if (window.innerWidth < 768) {
           const content = document.getElementById('filterContent');
