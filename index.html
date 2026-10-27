@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CIA4001 Budget 2027 终极拍摄剧本 (税务专家改版)</title>
+  <title>CIA4001 Budget 2027 终极全能拍摄剧本 (含详细运镜 + SFX音效 + GFX字卡)</title>
   <style>
     :root {
       --ang-color: #2563eb;
@@ -42,8 +42,8 @@
     }
 
     header h1 {
-      font-size: 1.5rem;
-      margin-bottom: 8px;
+      font-size: 1.45rem;
+      margin-bottom: 6px;
     }
 
     header p {
@@ -59,56 +59,51 @@
       padding: 0 12px;
     }
 
-    /* 顶部多功能筛选栏 (支持折叠) */
+    /* 顶部多功能筛选栏 (支持手机一键折叠) */
     .filter-bar {
       background: var(--card-bg);
       padding: 12px 16px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-bottom: 24px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      margin-bottom: 20px;
       position: sticky;
-      top: 10px;
+      top: 8px;
       z-index: 100;
       border: 1px solid #cbd5e1;
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
     }
     
     .filter-toggle-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-weight: 700;
+      font-weight: 800;
       color: #0f172a;
       cursor: pointer;
-      font-size: 0.95rem;
-      padding-bottom: 8px;
+      font-size: 0.92rem;
     }
     
     .filter-toggle-header.active {
       border-bottom: 1px dashed #cbd5e1;
+      padding-bottom: 8px;
       margin-bottom: 12px;
     }
 
     .toggle-icon {
-      background: #e2e8f0;
-      color: #334155;
-      padding: 4px 10px;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 4px 11px;
       border-radius: 999px;
-      font-size: 0.8rem;
-      transition: background 0.2s;
+      font-size: 0.78rem;
+      font-weight: 700;
     }
 
-    .filter-toggle-header:active .toggle-icon {
-      background: #cbd5e1;
-    }
-
-    /* 折叠内容区 */
     #filterContent {
       display: block;
     }
 
     .filter-group {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .filter-group:last-child {
@@ -119,7 +114,7 @@
       font-size: 0.8rem;
       font-weight: 700;
       color: #475569;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .filter-buttons {
@@ -130,9 +125,9 @@
 
     .filter-btn {
       border: 2px solid transparent;
-      padding: 6px 10px;
+      padding: 5px 10px;
       border-radius: 999px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -170,28 +165,52 @@
     .badge-all { background: linear-gradient(90deg, #2563eb, #16a34a, #9333ea); }
     .badge-cam { background-color: #0f172a; color: #38bdf8; border: 1px solid #38bdf8; }
 
-    /* 互拍排班总表 (手机适配) */
-    .schedule-card {
+    /* 折叠信息卡片（道具表、排班表） */
+    details.info-panel {
       background: var(--card-bg);
       border-radius: 12px;
-      padding: 16px;
-      margin-bottom: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      border: 1px solid #e2e8f0;
-      overflow-x: auto;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid #cbd5e1;
     }
 
-    .schedule-card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 12px;
+    details.info-panel summary {
+      font-weight: 800;
+      font-size: 0.96rem;
       color: #0f172a;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    details.info-panel summary::after {
+      content: "🔽 点击展开/收起";
+      font-size: 0.78rem;
+      color: #2563eb;
+      background: #eff6ff;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    details[open].info-panel summary::after {
+      content: "🔼 收起";
+    }
+
+    .panel-content {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.85rem;
     }
 
     .rotation-table {
       width: 100%;
-      min-width: 500px;
+      min-width: 520px;
       border-collapse: collapse;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
     }
 
     .rotation-table th, .rotation-table td {
@@ -214,7 +233,7 @@
     .act-section {
       background: var(--card-bg);
       border-radius: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.06);
       overflow: hidden;
       border: 1px solid #e2e8f0;
@@ -253,8 +272,8 @@
       background: #f8fafc;
       border: 2px solid #94a3b8;
       border-radius: 10px;
-      padding: 12px;
-      margin: 16px 0 10px 0;
+      padding: 12px 14px;
+      margin: 16px 0 12px 0;
       transition: all 0.25s ease;
     }
 
@@ -270,7 +289,7 @@
     .shot-title {
       font-weight: 800;
       color: #0f172a;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
     }
 
     .crew-box {
@@ -285,28 +304,41 @@
       font-size: 0.85rem;
       color: #334155;
       background: #ffffff;
-      padding: 10px;
+      padding: 10px 12px;
       border-radius: 6px;
       border-left: 4px solid #0284c7;
     }
 
     .how-to-shoot ul {
-      padding-left: 16px;
+      padding-left: 18px;
       margin-top: 4px;
+      margin-bottom: 6px;
+    }
+
+    .how-to-shoot li {
+      margin-bottom: 4px;
+    }
+
+    .sfx-gfx-box {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed #cbd5e1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
     .cue-tag {
       display: inline-block;
       font-weight: 700;
-      padding: 2px 6px;
+      padding: 3px 8px;
       border-radius: 4px;
-      margin-right: 4px;
-      margin-bottom: 4px;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
+      line-height: 1.4;
     }
 
-    .tag-sfx { background: #fef3c7; color: #92400e; }
-    .tag-gfx { background: #dcfce7; color: #166534; }
+    .tag-sfx { background: #fef3c7; color: #92400e; border-left: 3px solid #f59e0b; }
+    .tag-gfx { background: #dcfce7; color: #166534; border-left: 3px solid #16a34a; }
 
     /* 台词对话气泡框 */
     .dialogue-line {
@@ -327,9 +359,9 @@
     .speaker-meta {
       margin-bottom: 4px;
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2px;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px;
     }
 
     .action-note {
@@ -339,7 +371,7 @@
     }
 
     .speech-en {
-      font-size: 0.95rem;
+      font-size: 0.96rem;
       color: #0f172a;
       font-weight: 500;
       margin-top: 6px;
@@ -354,36 +386,21 @@
       background-color: #fefce8 !important;
       box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.35);
     }
-
-    .guide-box {
-      background: #faf5ff;
-      border-left: 5px solid #9333ea;
-      padding: 14px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      font-size: 0.85rem;
-    }
-
-    .guide-box h3 {
-      color: #6b21a8;
-      margin-bottom: 6px;
-      font-size: 0.95rem;
-    }
   </style>
 </head>
 <body>
 
 <header>
   <h1>🎬 CIA4001 Budget 2027 终极拍摄剧本</h1>
-  <p>本地互拍轮换 + 远程协同 | 全项 4-Excellent 冲刺版</p>
+  <p>含：详细怎么拍 + 空闲摄影师排班 + 🔊音效 (SFX) + 📊屏幕字卡 (GFX) | 税务专家改版</p>
 </header>
 
 <div class="container">
 
-  <!-- 互动角色与摄影师双模式筛选器 (带手机折叠功能) -->
+  <!-- 顶部互动角色与摄影师双模式筛选器 (支持一键折叠) -->
   <div class="filter-bar" id="filterBar">
     <div class="filter-toggle-header active" id="filterToggleBtn" onclick="toggleFilters()">
-      <span>⚙️ 专属高亮与折叠面板 (Filters)</span>
+      <span>⚙️ 角色/摄影师高亮菜单 (点击收起不挡屏)</span>
       <span class="toggle-icon" id="filterIcon">🔼 收起</span>
     </div>
     
@@ -391,97 +408,135 @@
       <div class="filter-group">
         <div class="filter-title">🎤 模式 1：按【出演台词】高亮 (背稿排练用)：</div>
         <div class="filter-buttons">
-          <button class="filter-btn btn-all" onclick="filterActor('all')">🔄 显示全部 (Show All)</button>
-          <button class="filter-btn btn-ang" onclick="filterActor('ang')">🔵 Ang Eng Jin 的台词</button>
+          <button class="filter-btn btn-all" onclick="resetFilter()">🔄 显示全部 (Show All)</button>
+          <button class="filter-btn btn-ang" onclick="filterActor('ang')">🔵 Ang Eng Jin</button>
           <button class="filter-btn btn-wong" onclick="filterActor('wong')">🔴 Wong Chun Kit</button>
           <button class="filter-btn btn-jasper" onclick="filterActor('jasper')">🟢 Jasper Chong</button>
           <button class="filter-btn btn-samuel" onclick="filterActor('samuel')">🟠 Samuel Fong</button>
           <button class="filter-btn btn-vincent" onclick="filterActor('vincent')">🟣 Vincent Chow (税务专家)</button>
         </div>
       </div>
-      <div class="filter-group" style="margin-top: 10px;">
-        <div class="filter-title">📷 模式 2：按【当摄影师】高亮 (现场看该拍啥)：</div>
+      <div class="filter-group" style="margin-top: 8px;">
+        <div class="filter-title">📷 模式 2：按【空闲掌镜摄影师】高亮 (看自己负责拍哪几个镜头)：</div>
         <div class="filter-buttons">
-          <button class="filter-btn btn-ang" onclick="filterCam('ang')">📷 Ang 掌镜的镜头</button>
-          <button class="filter-btn btn-wong" onclick="filterCam('wong')">📷 Wong 掌镜的镜头</button>
-          <button class="filter-btn btn-jasper" onclick="filterCam('jasper')">📷 Jasper 掌镜的镜头</button>
-          <button class="filter-btn btn-samuel" onclick="filterCam('samuel')">📷 Samuel 掌镜的镜头</button>
-          <button class="filter-btn btn-vincent" onclick="filterCam('friend')">📷 远程协助拍摄部分</button>
+          <button class="filter-btn btn-ang" onclick="filterCam('ang')">📷 Ang 负责拍的镜头</button>
+          <button class="filter-btn btn-wong" onclick="filterCam('wong')">📷 Wong 负责拍的镜头</button>
+          <button class="filter-btn btn-jasper" onclick="filterCam('jasper')">📷 Jasper 负责拍的镜头</button>
+          <button class="filter-btn btn-samuel" onclick="filterCam('samuel')">📷 Samuel 负责拍的镜头</button>
+          <button class="filter-btn btn-vincent" onclick="filterCam('friend')">📷 远程朋友拍 Vincent 的镜头</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 4+1 互拍排班总览表 -->
-  <div class="schedule-card">
-    <h3>📋 本地 4人 + 远程连线 1人：拍摄调度表</h3>
-    <div style="overflow-x: auto;">
-      <table class="rotation-table">
-        <thead>
-          <tr>
-            <th>拍摄场景组</th>
-            <th>场上演员 (On-Camera)</th>
-            <th>摄影师 (Camera Crew)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>A：新闻演播室</strong></td>
-            <td><span class="badge badge-ang">Ang</span><br><span class="badge badge-wong">Wong</span></td>
-            <td><strong>A机(全景)：</strong><span class="badge badge-jasper">Jasper</span><br><strong>B机(侧拍)：</strong><span class="badge badge-samuel">Samuel</span></td>
-          </tr>
-          <tr>
-            <td><strong>B：大马茶室 / 办公室</strong></td>
-            <td><span class="badge badge-jasper">Jasper</span><br><span class="badge badge-samuel">Samuel</span></td>
-            <td><strong>A机(全景/急推)：</strong><span class="badge badge-ang">Ang</span><br><strong>B机(过肩)：</strong><span class="badge badge-wong">Wong</span></td>
-          </tr>
-          <tr>
-            <td><strong>C：远程视频连线</strong></td>
-            <td><span class="badge badge-vincent">Vincent (税务专家)</span></td>
-            <td><strong>掌镜：</strong><span class="badge badge-vincent">远程协助的朋友</span></td>
-          </tr>
-          <tr>
-            <td><strong>D：单人走拍 & 结尾</strong></td>
-            <td>大家轮流单人走拍</td>
-            <td><strong>Ang 与 Jasper</strong> 互拍<br><strong>Wong 与 Samuel</strong> 互拍</td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- 可折叠面板 1：服装与小道具核对清单 -->
+  <details class="info-panel">
+    <summary>📦 拍摄前必查：服装与小道具清单 (Props & Wardrobe Checklist)</summary>
+    <div class="panel-content">
+      <p><strong>👔 服装要求 (Wardrobe)：</strong></p>
+      <ul style="padding-left:18px; margin-bottom:10px;">
+        <li><strong>Ang Eng Jin & Wong Chun Kit (演播室组)：</strong>商务正装 (衬衫/西装外套)，展现专业主播与审计师形象。</li>
+        <li><strong>Samuel Fong (SME 老板)：</strong>Polo 衫或卷起袖子的衬衫，展现忙碌的中小企业老板形象。</li>
+        <li><strong>Jasper Chong (M40 个人)：</strong>休闲 T 恤或休闲衬衫，贴近大马中产打工族日常。</li>
+        <li><strong>Vincent Chow (大马税务专家)：</strong>衬衫或商务休闲装 (Smart Casual)，展现资深税务顾问 (Tax Professional) 专业形象。</li>
+      </ul>
+      <p><strong>🎒 场景小道具 (Props)：</strong></p>
+      <ul style="padding-left:18px;">
+        <li><strong>演播室 (Ang & Wong)：</strong>① 贴有 "BELANJAWAN 2027" 的文件夹；② 1把<strong>放大镜</strong> (Wong 拆穿漏洞用)；③ 1张写有 "Section 13(1)(a) ITA 1967" 的字卡；④ 笔记本电脑。</li>
+        <li><strong>茶室/办公室 (Jasper & Samuel)：</strong>① 2杯饮料 (Teh Tarik / Kopi)；② 1个<strong>计算器</strong> (按出 1600)；③ 手机 (展示 AI 软件和宠物照)；④ 几张纸充当<strong>员工薪水单 (Payslips)</strong>。</li>
+      </ul>
     </div>
-  </div>
+  </details>
+
+  <!-- 可折叠面板 2：4+1 互拍排班总表 & 远程拍摄指南 -->
+  <details class="info-panel">
+    <summary>📋 本地 4人互拍轮换表 & 远程朋友拍摄指南 (Camera Crew Schedule)</summary>
+    <div class="panel-content">
+      <div style="overflow-x: auto; margin-bottom: 12px;">
+        <table class="rotation-table">
+          <thead>
+            <tr>
+              <th>拍摄场景组</th>
+              <th>场上演员 (On-Camera)</th>
+              <th>空闲组员当摄影师 (Camera Crew)</th>
+              <th>双机位配合秘诀</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>场景 A：新闻演播室</strong></td>
+              <td><span class="badge badge-ang">Ang</span><br><span class="badge badge-wong">Wong</span></td>
+              <td><strong>A机(全景/推进)：</strong><span class="badge badge-jasper">Jasper</span><br><strong>B机(45°侧拍)：</strong><span class="badge badge-samuel">Samuel</span></td>
+              <td>两人同时举手机拍！Jasper 站正前方拍双人全景与推进(Zoom)；Samuel 站侧面45度抓拍特写。</td>
+            </tr>
+            <tr>
+              <td><strong>场景 B：大马茶室/SME</strong></td>
+              <td><span class="badge badge-jasper">Jasper</span><br><span class="badge badge-samuel">Samuel</span></td>
+              <td><strong>A机(全景/急推/仰俯拍)：</strong><span class="badge badge-ang">Ang</span><br><strong>B机(过肩/特写)：</strong><span class="badge badge-wong">Wong</span></td>
+              <td>Ang 负责正机位、仰拍、俯拍与搞笑急推(Crash Zoom)；Wong 负责过肩镜头(OTS)与道具特写。</td>
+            </tr>
+            <tr>
+              <td><strong>场景 C：税务专家连线</strong></td>
+              <td><span class="badge badge-vincent">Vincent (税务专家)</span></td>
+              <td><strong>掌镜：</strong><span class="badge badge-vincent">Vincent 的朋友</span></td>
+              <td>横屏 16:9 拍摄：① 书桌前<strong>正面中近景</strong>；② <strong>45度侧面</strong>访谈角；③ 室外<strong>倒退行走跟拍</strong>。</td>
+            </tr>
+            <tr>
+              <td><strong>场景 D：第5幕行走跟拍</strong></td>
+              <td>轮流单人走拍</td>
+              <td><strong>Ang 与 Jasper</strong> 互拍<br><strong>Wong 与 Samuel</strong> 互拍</td>
+              <td>演员往前走，摄影师双手稳握手机慢慢倒退走跟拍。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="background:#faf5ff; padding:10px; border-left:4px solid #9333ea; border-radius:6px;">
+        <strong>📲 发给帮 Vincent 拍摄的朋友的英文提示 (Instructions for Vincent's Cameraman)：</strong><br>
+        1. <strong>Horizontal 16:9 (1080p/4K):</strong> Keep phone horizontal at eye level.<br>
+        2. <strong>3 Angles:</strong> Shot 5 from the <strong>Front (chest up)</strong>; Shot 11 & 12 from a <strong>45-degree side angle</strong>; Shot 13 outdoors walking backwards slowly while Vincent walks toward the camera (Tracking Shot).<br>
+        3. <strong>Final High-Five (Shot 14):</strong> Film Vincent doing a High-Five toward the <strong>LEFT edge of the frame</strong> so it matches the team on the left screen!
+      </div>
+    </div>
+  </details>
 
   <!-- ==================== 第一幕 ==================== -->
   <div class="act-section">
     <div class="act-header">
-      <h2>第一幕：爆笑开场与专家视频连线</h2>
+      <h2>第一幕：爆笑开场与税务专家连线 (Cold Open & Macro Overview)</h2>
       <span class="time-pill">⏱️ 0:00 – 0:55</span>
     </div>
     <div class="act-body">
 
       <!-- 镜头 1 -->
-      <div class="shot-card" data-cam="jasper samuel">
+      <div class="shot-card" data-cam="jasper samuel friend">
         <div class="shot-header">
-          <span class="shot-title">🎥 镜头 1：演播室双人全景 + 侧拍</span>
+          <span class="shot-title">🎥 镜头 1：演播室双人全景 + 侧拍切换 ➔ 三分屏专家连线 (Wide Shot ➔ Triple Split-Screen)</span>
           <div class="crew-box">
-            <span class="badge badge-cam">摄影师：</span>
-            <span class="badge badge-jasper">A机: Jasper</span>
-            <span class="badge badge-samuel">B机: Samuel</span>
+            <span class="badge badge-cam">空闲掌镜摄影师：</span>
+            <span class="badge badge-jasper">A机主摄：Jasper Chong</span>
+            <span class="badge badge-samuel">B机侧拍：Samuel Fong</span>
+            <span class="badge badge-vincent">远程协助：Vincent 的朋友</span>
           </div>
         </div>
         <div class="how-to-shoot">
-          <strong>📐 怎么拍：</strong>
+          <strong>📐 怎么拍（详细操作）：</strong>
           <ul>
-            <li><strong>A机(Jasper)：</strong>站正前方拍两人半身全景，说到 "RM510 billion" 时推近半步。</li>
-            <li><strong>B机(Samuel)：</strong>站右侧45度角专拍 Wong。</li>
+            <li><strong>场上演员：</strong>Ang Eng Jin（坐左边）和 Wong Chun Kit（坐右边），桌上摆电脑和写有 "BELANJAWAN 2027" 的文件夹。</li>
+            <li><strong>A机（Jasper Chong）：</strong>站在正前方约 2 米处，双手横握手机拍两人半身全景（Wide Shot）。当 Ang 说到 "RM510 billion" 时，缓慢往前迈半步推近画面。</li>
+            <li><strong>B机（Samuel Fong）：</strong>站在右侧 45 度角约 1.2 米处，专门对准 Wong Chun Kit 拍中近景，当 Wong 开口介绍嘉宾时切到 B 机画面！</li>
+            <li><strong>远程连线画面（Vincent 的朋友）：</strong>帮 Vincent 录一个 5 秒钟坐在书桌前对镜头微笑点头致意的画面，后期剪辑拼在三分屏右侧。</li>
           </ul>
-          <div style="margin-top:6px;"><span class="cue-tag tag-sfx">🔊 SFX: Breaking News 音乐</span></div>
+          <div class="sfx-gfx-box">
+            <span class="cue-tag tag-sfx">🔊 音效 (SFX)：① Breaking News 紧迫开场音乐 (音量15%)；② 三分屏弹出时加“滴滴”视频连线声 (Video Call Beep)</span>
+            <span class="cue-tag tag-gfx">📊 字卡 (GFX)：① 开场标题卡 "BELANJAWAN 2027: RM510 Billion | GDP 4.2%–5.2% | Deficit 3.3%"；② 三分屏右格贴条 "LIVE LINK: VINCENT CHOW (TAX PROFESSIONAL)"</span>
+          </div>
         </div>
       </div>
 
       <div class="dialogue-line line-ang" data-speaker="ang">
         <div class="speaker-meta">
-          <span class="badge badge-ang">Ang Eng Jin (主播)</span>
-          <span class="action-note">（看 A机 Jasper 的镜头，微笑）</span>
+          <span class="badge badge-ang">Ang Eng Jin (主播 - 演播室演员)</span>
+          <span class="action-note">（看着 A机 Jasper 的镜头，自信微笑开场）</span>
         </div>
         <div class="speech-en">
           "Good evening and welcome to <em>Tax Talk Live</em>! Malaysia’s Budget 2027 has just been tabled with a record <strong>RM510 billion</strong> total allocation, projected GDP growth of <strong>4.2% to 5.2%</strong>, and a narrowing fiscal deficit target of <strong>3.3%</strong>. Today, we critically review six major changes, how they affect Malaysian individuals and companies, and what Budget 2028 must focus on next!"
@@ -490,8 +545,8 @@
 
       <div class="dialogue-line line-wong" data-speaker="wong">
         <div class="speaker-meta">
-          <span class="badge badge-wong">Wong Chun Kit (审计师)</span>
-          <span class="action-note">（拿起放大镜，看 B机 Samuel 的镜头）</span>
+          <span class="badge badge-wong">Wong Chun Kit (审计师 - 演播室演员)</span>
+          <span class="action-note">（拿起桌上的放大镜，转头看向 B机 Samuel 的镜头）</span>
         </div>
         <div class="speech-en">
           "Joining us live from our local Kopitiam are M40 taxpayer Jasper and SME owner Boss Samuel—and dialing in remotely is our resident Tax Professional, Vincent!"
@@ -499,30 +554,33 @@
       </div>
 
       <!-- 镜头 2 & 3 -->
-      <div class="shot-card" data-cam="ang wong friend">
+      <div class="shot-card" data-cam="ang wong">
         <div class="shot-header">
-          <span class="shot-title">🎥 镜头 2 & 3：茶室互动 ➔ 急推变焦特写</span>
+          <span class="shot-title">🎥 镜头 2 & 3：茶室喝茶互动 ➔ 搞笑急推变焦特写 (Medium Two-Shot ➔ Crash Zoom In)</span>
           <div class="crew-box">
-            <span class="badge badge-cam">摄影师：</span>
-            <span class="badge badge-ang">A机: Ang</span>
-            <span class="badge badge-wong">B机: Wong</span>
-            <span class="badge badge-vincent">专家录制: 朋友</span>
+            <span class="badge badge-cam">空闲掌镜摄影师：</span>
+            <span class="badge badge-ang">A机主摄：Ang Eng Jin</span>
+            <span class="badge badge-wong">B机过肩：Wong Chun Kit</span>
           </div>
         </div>
         <div class="how-to-shoot">
-          <strong>📐 怎么拍：</strong>
+          <strong>📐 怎么拍（详细操作）：</strong>
           <ul>
-            <li><strong>A机(Ang)：</strong>站正前方拍中景。当 Jasper 讲完台词，手指在屏幕快速放大 (Crash Zoom In) 怼脸拍 Samuel！</li>
-            <li><strong>B机(Wong)：</strong>越过 Samuel 肩膀拍 Jasper。</li>
+            <li><strong>场上演员：</strong>换 Jasper Chong 和 Samuel Fong 坐到茶室/食堂桌前（桌上放两杯拉茶 Teh Tarik 和手机）。</li>
+            <li><strong>A机（Ang Eng Jin）：</strong>站正前方拍两人同框中景（Medium Shot）。<strong>🔥关键运镜：</strong>当 Jasper 说完 "disallow your entire salary tax deduction!" 的一瞬间，Ang 手指在手机屏幕上快速拉大变焦（1x 急推到 3x Crash Zoom In），直怼 Samuel 震惊的脸！</li>
+            <li><strong>B机（Wong Chun Kit）：</strong>站在 Samuel 身后偏左，越过 Samuel 的肩膀拍 Jasper 看手机说话的过肩镜头（Over-the-Shoulder Shot）。</li>
           </ul>
-          <div style="margin-top:6px;"><span class="cue-tag tag-sfx">🔊 SFX: 视频连线滴滴声 + 刮碟声</span></div>
+          <div class="sfx-gfx-box">
+            <span class="cue-tag tag-sfx">🔊 音效 (SFX)：当镜头急推 Samuel 震惊表情时，加入黑胶唱片刮擦声 (Record Scratch) + 背景音乐瞬间骤停！</span>
+            <span class="cue-tag tag-gfx">📊 字卡 (GFX)：Samuel 头上弹出搞笑贴纸 "???" 或汗滴特效 + "-RM6,000 Tax Cut vs. +RM2,000 Min Wage!"</span>
+          </div>
         </div>
       </div>
 
       <div class="dialogue-line line-samuel" data-speaker="samuel">
         <div class="speaker-meta">
-          <span class="badge badge-samuel">Samuel Fong (老板)</span>
-          <span class="action-note">（对着 A机 Ang 举茶杯，大笑）</span>
+          <span class="badge badge-samuel">Samuel Fong (SME老板 - 茶室演员)</span>
+          <span class="action-note">（对着 A机 Ang 的镜头高举茶杯，哈哈大笑）</span>
         </div>
         <div class="speech-en">
           "Cheers everyone! Budget 2027 cuts MSME corporate tax by 1%! I save <strong>RM6,000</strong>! Teh Tarik for the whole Kopitiam on me!"
@@ -531,8 +589,8 @@
 
       <div class="dialogue-line line-jasper" data-speaker="jasper">
         <div class="speaker-meta">
-          <span class="badge badge-jasper">Jasper Chong (M40)</span>
-          <span class="action-note">（拍拍 Samuel 肩膀）</span>
+          <span class="badge badge-jasper">Jasper Chong (M40个人 - 茶室演员)</span>
+          <span class="action-note">（看了一眼手机，拍拍 Samuel 的肩膀）</span>
         </div>
         <div class="speech-en">
           "Steady, Boss Samuel! By the way, minimum wage goes up to <strong>RM2,000</strong>, graduate starting pay is <strong>RM2,500</strong>, and if you don’t pay salaries through bank accounts, LHDN will disallow your entire salary tax deduction!"
@@ -541,8 +599,8 @@
 
       <div class="dialogue-line line-samuel" data-speaker="samuel">
         <div class="speaker-meta">
-          <span class="badge badge-samuel">Samuel Fong (老板)</span>
-          <span class="action-note">（A机 Ang 瞬间急推特写！Samuel 茶杯停在半空，表情震惊）</span>
+          <span class="badge badge-samuel">Samuel Fong (SME老板 - 茶室演员)</span>
+          <span class="action-note">（此时 A机 Ang 急速 Zoom In 推到脸部特写！Samuel 茶杯停在半空，瞪大眼睛）</span>
         </div>
         <div class="speech-en">
           "Wait... uncle, cancel the Teh Tarik! Give me Panadol instead!"
@@ -555,7 +613,7 @@
   <!-- ==================== 第二幕 ==================== -->
   <div class="act-section">
     <div class="act-header">
-      <h2>第二幕：个人税务改革深度剖析 (Changes 1 - 3)</h2>
+      <h2>第二幕：个人税务改革深度剖析 (Changes 1 to 3: Personal Tax & Housing)</h2>
       <span class="time-pill">⏱️ 0:55 – 3:25</span>
     </div>
     <div class="act-body">
@@ -563,11 +621,22 @@
       <!-- 镜头 4 -->
       <div class="shot-card" data-cam="jasper ang">
         <div class="shot-header">
-          <span class="shot-title">🎥 镜头 4：播报 + 茶室计算器特写</span>
+          <span class="shot-title">🎥 镜头 4：Change 1 演播室播报 + 茶室计算器特写上摇 (Close-Up Tilt Up)</span>
           <div class="crew-box">
-            <span class="badge badge-cam">摄影师：</span>
-            <span class="badge badge-jasper">拍主播: Jasper</span>
-            <span class="badge badge-ang">拍茶室: Ang</span>
+            <span class="badge badge-cam">空闲掌镜摄影师：</span>
+            <span class="badge badge-jasper">拍演播室 Ang：Jasper Chong</span>
+            <span class="badge badge-ang">拍茶室 Jasper：Ang Eng Jin</span>
+          </div>
+        </div>
+        <div class="how-to-shoot">
+          <strong>📐 怎么拍（详细操作）：</strong>
+          <ul>
+            <li><strong>前半段（拍演播室 Ang）：</strong>由空闲的 <strong>Jasper Chong</strong> 掌镜，对准演播室的 Ang 拍胸部以上中近景（Medium Close-Up）。</li>
+            <li><strong>后半段（拍茶室 Jasper）：</strong>由空闲的 <strong>Ang Eng Jin</strong> 掌镜，镜头先特写桌上计算器屏幕按出数字 "1600"，然后手机平稳往上摇（Tilt Up）对准 Jasper 开心微笑的脸！</li>
+          </ul>
+          <div class="sfx-gfx-box">
+            <span class="cue-tag tag-sfx">🔊 音效 (SFX)：当 Jasper 举起计算器算出 RM1,600 时，加入清脆收银机声 "Cha-Ching!"</span>
+            <span class="cue-tag tag-gfx">📊 字卡 (GFX)：核心字卡 "Change 1 (YA 2027): Basic Relief RM9,000 ➔ RM12,000 | M40 Tax Rate -1% (RM70k–RM150k) = Up to RM1,600 Saved!"</span>
           </div>
         </div>
       </div>
@@ -583,8 +652,8 @@
 
       <div class="dialogue-line line-jasper" data-speaker="jasper">
         <div class="speaker-meta">
-          <span class="badge badge-jasper">Jasper Chong (M40)</span>
-          <span class="action-note">（举起计算器展示）</span>
+          <span class="badge badge-jasper">Jasper Chong (M40个人)</span>
+          <span class="action-note">（把计算器举到镜头前展示 1600）</span>
         </div>
         <div class="speech-en">
           "Because the RM12,000 basic relief reduces chargeable income at my highest marginal tax rate, combining that with the 1% rate cut gives M40 earners like me up to <strong>RM1,600</strong> in extra disposable income! Around 5 million taxpayers benefit from this."
@@ -594,39 +663,61 @@
       <!-- 镜头 5 -->
       <div class="shot-card" data-cam="friend">
         <div class="shot-header">
-          <span class="shot-title">🎥 镜头 5：税务专家连线 — 批判分析</span>
+          <span class="shot-title">🎥 镜头 5：税务专家连线 — 30%顶格税率与B40盲点批判分析 (Expert Medium Close-Up)</span>
           <div class="crew-box">
-            <span class="badge badge-cam">摄影师：</span>
-            <span class="badge badge-vincent">朋友协助掌镜 (正面中景)</span>
+            <span class="badge badge-cam">掌镜摄影师：</span>
+            <span class="badge badge-vincent">Vincent 的朋友 (正面中近景)</span>
+          </div>
+        </div>
+        <div class="how-to-shoot">
+          <strong>📐 怎么拍（详细操作）：</strong>
+          <ul>
+            <li><strong>远程朋友掌镜：</strong>让 Vincent 坐在整洁的书桌前，手机与视线齐平拍摄正面中近景（胸部以上）。当 Vincent 说到 "Singapore’s 24% top rate" 时，做专业手势对比，摄影师稍微把镜头往前推近一点加强语气！</li>
+          </ul>
+          <div class="sfx-gfx-box">
+            <span class="cue-tag tag-sfx">🔊 音效 (SFX)：字卡弹出时加轻快过渡音 "Whoosh"</span>
+            <span class="cue-tag tag-gfx">📊 字卡 (GFX)：对比字卡 "Critical Review: 30% Top Rate triggers at RM1m (was RM2m) | Malaysia 30% vs. Singapore 24% | B40 = RM0 Direct Tax Cut Benefit"</span>
           </div>
         </div>
       </div>
 
       <div class="dialogue-line line-vincent" data-speaker="vincent">
         <div class="speaker-meta">
-          <span class="badge badge-vincent">Vincent Chow (税务专家)</span>
-          <span class="action-note">（专业姿态，客观分析）</span>
+          <span class="badge badge-vincent">Vincent Chow (税务专家 Tax Professional)</span>
+          <span class="action-note">（推了推眼镜，以专业税务顾问口吻客观点评）</span>
         </div>
         <div class="speech-en">
-          "Hold on, Jasper! Look at how the government cross-subsidises that cut. The top <strong>30% marginal tax rate</strong> now triggers earlier at <strong>RM1 million</strong> of chargeable income instead of RM2 million. From a tax planning perspective, this widens the gap with Singapore’s 24% top rate, making it harder to attract global C-suite talent—while B40 households below the tax threshold gain zero direct benefit from these tax cuts!"
+          "Hold on, Jasper! Look at how the government cross-subsidises that cut. The top <strong>30% marginal tax rate</strong> now triggers earlier at <strong>RM1 million</strong> of chargeable income instead of RM2 million. From a tax planning perspective, this costs a RM2 million earner an extra <strong>RM20,000 in tax</strong> and widens the gap with Singapore’s 24% top rate, making it harder to attract C-suite talent—while B40 households below the tax threshold gain zero direct benefit from these tax cuts!"
         </div>
       </div>
 
       <!-- 镜头 6 & 7 -->
       <div class="shot-card" data-cam="wong samuel">
         <div class="shot-header">
-          <span class="shot-title">🎥 镜头 6 & 7：茶室道具 ➔ 演播室缓慢推进</span>
+          <span class="shot-title">🎥 镜头 6 & 7：Change 2 茶室道具展示 ➔ 演播室放大镜推进变焦 (Props Cut ➔ Slow Zoom In)</span>
           <div class="crew-box">
-            <span class="badge badge-cam">摄影师：</span>
-            <span class="badge badge-wong">拍 Jasper: Wong</span>
-            <span class="badge badge-samuel">拍 Wong: Samuel</span>
+            <span class="badge badge-cam">空闲掌镜摄影师：</span>
+            <span class="badge badge-wong">拍茶室 Jasper：Wong Chun Kit</span>
+            <span class="badge badge-samuel">拍演播室 Wong：Samuel Fong</span>
+          </div>
+        </div>
+        <div class="how-to-shoot">
+          <strong>📐 怎么拍（详细操作）：</strong>
+          <ul>
+            <li><strong>镜头 6（拍茶室 Jasper）：</strong>由空闲的 <strong>Wong Chun Kit</strong> 掌镜，先从侧面拍 Jasper 手里展示的手机（打开 ChatGPT/AI 界面和猫咪照片），再平移切回 Jasper 正面说话。</li>
+            <li><strong>镜头 7（拍演播室 Wong）：</strong>由空闲的 <strong>Samuel Fong</strong> 掌镜，当 Wong Chun Kit 举起放大镜说到 "overall umbrella caps remain frozen" 时，Samuel 缓慢放大画面变焦（Slow Zoom In）聚焦到 Wong 犀利的眼神！</li>
+          </ul>
+          <div class="sfx-gfx-box">
+            <span class="cue-tag tag-sfx">🔊 音效 (SFX)：当 Wong 举起放大镜开口拆穿时，加入红色警报蜂鸣声 "Red Buzzer (Errr!)"</span>
+            <span class="cue-tag tag-gfx">📊 字卡 (GFX)：① 浮现图标 "🤖 AI Apps + 🐾 Pet Care (RM2.5k) | 🎓 Spouse TVET & STEM (RM7k) | 👵 Parental Care (RM8k, No Doctor Letter) | Elderly Care SST 8%➔6%"；② 红色警告字卡 "⚠️ CAPS FROZEN: Health still RM10,000 (Breastfeeding RM1k merged inside!)"</span>
           </div>
         </div>
       </div>
 
       <div class="dialogue-line line-jasper" data-speaker="jasper">
         <div class="speaker-meta">
-          <span class="badge badge-jasper">Jasper Chong (M40)</span>
+          <span class="badge badge-jasper">Jasper Chong (M40个人)</span>
+          <span class="action-note">（展示手机上的 AI 界面与宠物照片）</span>
         </div>
         <div class="speech-en">
           "What about <strong>Change 2: Modernisation of Personal Tax Reliefs</strong>? Under the RM2,500 Lifestyle relief, I can now claim <strong>AI software subscriptions</strong> and <strong>pet adoption and vaccination fees</strong>! Under the RM7,000 Education relief, spouse TVET upskilling rises to <strong>RM3,000</strong>, and kids' STEM or language tuition up to <strong>RM2,000</strong> moves here from Lifestyle. Plus, the RM8,000 parental care relief no longer requires a doctor’s letter, and elderly care centre Service Tax drops from <strong>8% to 6%</strong> with annual fees up to RM96,000 fully exempted!"
@@ -646,11 +737,21 @@
       <!-- 镜头 8 -->
       <div class="shot-card" data-cam="jasper samuel">
         <div class="shot-header">
-          <span class="shot-title">🎥 镜头 8：首购族印花税 — 双机位同拍</span>
+          <span class="shot-title">🎥 镜头 8：Change 3 首购族印花税 — 双机位正侧交替剪辑 (Two-Camera Cut)</span>
           <div class="crew-box">
-            <span class="badge badge-cam">摄影师：</span>
-            <span class="badge badge-jasper">正拍 Ang: Jasper</span>
-            <span class="badge badge-samuel">侧拍 Wong: Samuel</span>
+            <span class="badge badge-cam">空闲掌镜摄影师：</span>
+            <span class="badge badge-jasper">A机正拍 Ang：Jasper Chong</span>
+            <span class="badge badge-samuel">B机45°侧拍 Wong：Samuel Fong</span>
+          </div>
+        </div>
+        <div class="how-to-shoot">
+          <strong>📐 怎么拍（详细操作）：</strong>
+          <ul>
+            <li><strong>Jasper 站正前方拍 Ang</strong>，<strong>Samuel 站侧面 45 度角拍 Wong</strong>。两人一唱一和，双机同时录制，后期剪辑在正机位与侧机位之间利落切换！</li>
+          </ul>
+          <div class="sfx-gfx-box">
+            <span class="cue-tag tag-sfx">🔊 音效 (SFX)：字卡弹出提示音 "Pop / Ding"</span>
+            <span class="cue-tag tag-gfx">📊 字卡 (GFX)："Change 3: First-Home Stamp Duty (2027–2030) | Up to RM500k: 100% Exempt | RM500k–RM750k: 50% Remission on Balance (Saves >RM11,000!)"</span>
           </div>
         </div>
       </div>
@@ -679,7 +780,7 @@
   <!-- ==================== 第三幕 ==================== -->
   <div class="act-section">
     <div class="act-header">
-      <h2>第三幕：企业税务、薪金门槛与合规 (Changes 4 - 6)</h2>
+      <h2>第三幕：企业税务、薪金门槛与合规风暴 (Changes 4 to 6: Corporate & MSMEs)</h2>
       <span class="time-pill">⏱️ 3:25 – 5:35</span>
     </div>
     <div class="act-body">
@@ -687,19 +788,30 @@
       <!-- 镜头 9 & 10 -->
       <div class="shot-card" data-cam="ang jasper">
         <div class="shot-header">
-          <span class="shot-title">🎥 镜头 9 & 10：仰拍霸气 ➔ 俯拍弱小 (喜剧反差)</span>
+          <span class="shot-title">🎥 镜头 9 & 10：Change 4 仰拍老板霸气 ➔ 俯拍老板弱小 (Low-Angle to High-Angle)</span>
           <div class="crew-box">
-            <span class="badge badge-cam">摄影师：</span>
-            <span class="badge badge-ang">拍 Samuel (仰/俯): Ang</span>
-            <span class="badge badge-jasper">拍 Wong: Jasper</span>
+            <span class="badge badge-cam">空闲掌镜摄影师：</span>
+            <span class="badge badge-ang">拍 Samuel (仰拍+俯拍)：Ang Eng Jin</span>
+            <span class="badge badge-jasper">拍演播室 Wong：Jasper Chong</span>
+          </div>
+        </div>
+        <div class="how-to-shoot">
+          <strong>📐 怎么拍（🔥拿满 Videography 4分的招牌镜头！）：</strong>
+          <ul>
+            <li><strong>镜头 9（仰拍 Low-Angle）：</strong><strong>Ang Eng Jin</strong> 蹲下来，把手机放在腰部高度由下往上仰拍站着的 Samuel Fong，让 Boss Samuel 看起来无比高大霸气！</li>
+            <li><strong>镜头 10（俯拍 High-Angle）：</strong>当 Wong Chun Kit 拆穿他 "RM6,000 a year is only RM500 a month" 时，<strong>Ang Eng Jin</strong> 站到椅子上（或高举双手）从高处往下俯拍坐着的 Samuel，他抱头叹气，显得弱小无助，形成强烈喜剧反差！</li>
+          </ul>
+          <div class="sfx-gfx-box">
+            <span class="cue-tag tag-sfx">🔊 音效 (SFX)：当 Wong 拆穿 "only RM500 a month" 切到俯拍 Samuel 时，加入搞笑泄气长号声 "Sad Trombone (Womp-Womp-Womp)"</span>
+            <span class="cue-tag tag-gfx">📊 字卡 (GFX)："Change 4: MSME Tax Cut (First RM150k: 15%➔14% | Next RM450k: 17%➔16%) = Max RM6,000/yr (RM500/mth) | Small Assets RM3k | ACA to 2030"</span>
           </div>
         </div>
       </div>
 
       <div class="dialogue-line line-samuel" data-speaker="samuel">
         <div class="speaker-meta">
-          <span class="badge badge-samuel">Samuel Fong (老板)</span>
-          <span class="action-note">（Ang 蹲下仰拍：双手叉腰气势磅礴）</span>
+          <span class="badge badge-samuel">Samuel Fong (SME老板)</span>
+          <span class="action-note">（Ang 蹲下仰拍：Samuel 双手叉腰，气势磅礴）</span>
         </div>
         <div class="speech-en">
           "Now let’s talk business! Under <strong>Change 4: MSME Corporate Tax Cut & Capital Allowances</strong>, resident companies and LLPs with paid-up capital up to RM2.5 million and revenue up to RM50 million get a 1% rate cut: the first RM150,000 drops from <strong>15% to 14%</strong>, and the next RM450,000 drops from <strong>17% to 16%</strong>. That saves up to <strong>RM6,000</strong> for 300,000 MSMEs! Plus, small-value assets up to <strong>RM3,000</strong> get an immediate write-off, and Accelerated Capital Allowances for locally produced machinery and ICT equipment are extended until 2030!"
@@ -709,6 +821,7 @@
       <div class="dialogue-line line-wong" data-speaker="wong">
         <div class="speaker-meta">
           <span class="badge badge-wong">Wong Chun Kit (审计师)</span>
+          <span class="action-note">（Jasper 掌镜拍演播室特写，紧接着切 Ang 高处俯拍 Samuel 抱头）</span>
         </div>
         <div class="speech-en">
           "Let’s be realistic, Boss Samuel. RM6,000 a year is only <strong>RM500 a month</strong>! And unincorporated sole proprietors or conventional partnerships taxed at individual rates get zero benefit from this corporate rate cut."
@@ -718,20 +831,32 @@
       <!-- 镜头 11 -->
       <div class="shot-card" data-cam="wong friend jasper">
         <div class="shot-header">
-          <span class="shot-title">🎥 镜头 11：薪水发愁 ➔ 专家分析 ➔ 亮法案</span>
+          <span class="shot-title">🎥 镜头 11：Changes 5 & 6 — 茶室薪水单发愁 ➔ 税务专家45°侧拍 ➔ 演播室亮法案卡</span>
           <div class="crew-box">
-            <span class="badge badge-cam">摄影师：</span>
-            <span class="badge badge-wong">拍 Samuel: Wong</span>
-            <span class="badge badge-vincent">专家侧拍: 朋友</span>
-            <span class="badge badge-jasper">拍 Wong: Jasper</span>
+            <span class="badge badge-cam">空闲掌镜摄影师：</span>
+            <span class="badge badge-wong">拍茶室 Samuel：Wong Chun Kit</span>
+            <span class="badge badge-vincent">拍专家 Vincent：朋友 (45°侧拍)</span>
+            <span class="badge badge-jasper">拍演播室 Wong：Jasper Chong</span>
+          </div>
+        </div>
+        <div class="how-to-shoot">
+          <strong>📐 怎么拍（详细操作）：</strong>
+          <ul>
+            <li><strong>拍 Samuel（茶室）：</strong>由空闲的 <strong>Wong Chun Kit</strong> 正面近景拍摄 Samuel 翻看一叠员工薪水单擦汗的样子。</li>
+            <li><strong>拍 Vincent（专家连线）：</strong>请 <strong>协助拍摄的朋友</strong> 站到 Vincent 的 <strong>45 度侧面</strong> 拍摄，呈现出专业电视税务访谈的视觉感。</li>
+            <li><strong>拍 Wong（演播室）：</strong>由空闲的 <strong>Jasper Chong</strong> 拍摄，当 Wong 说到 "Section 13(1)(a)" 时，把写有该法条的卡片举到镜头前做特写！</li>
+          </ul>
+          <div class="sfx-gfx-box">
+            <span class="cue-tag tag-sfx">🔊 音效 (SFX)：① 当 Samuel 说到 "disallow our salary expenses" 时，加沉重的法庭木槌声 / 盖章声 "Gavel Bang / Stamp Thud!"；② Wong 举起法条卡时加紧张提示音</span>
+            <span class="cue-tag tag-gfx">📊 字卡 (GFX)：① "Change 5: Min Wage RM2,000 | Grad Pay RM2,500 | ❌ Cash Payroll = RM0 Corporate Tax Deduction!"；② "Change 6: Employer PTPTN Tax Deduction (2027–2028) & 100% Green Tech ITA (to 2030) | ⚠️ Trap: Sec 13(1)(a) ITA 1967 Perquisite Risk!"</span>
           </div>
         </div>
       </div>
 
       <div class="dialogue-line line-samuel" data-speaker="samuel">
         <div class="speaker-meta">
-          <span class="badge badge-samuel">Samuel Fong (老板)</span>
-          <span class="action-note">（Wong 掌镜：看着薪水单擦汗）</span>
+          <span class="badge badge-samuel">Samuel Fong (SME老板)</span>
+          <span class="action-note">（Wong 掌镜：Samuel 看着薪水单擦汗）</span>
         </div>
         <div class="speech-en">
           "Exactly! RM500 a month cannot even cover <strong>Change 5: Minimum Wage Hike & Cashless Payroll Tax Deduction Rules</strong>! Minimum wage jumps from RM1,700 to <strong>RM2,000</strong> in June 2027, graduate starting pay is set at <strong>RM2,500</strong>, and the GLC living wage benchmark hits <strong>RM3,400</strong>. Worst of all, for non-exempt companies, if we pay salaries in cash instead of bank accounts, LHDN will <strong>disallow our salary expenses for corporate tax deduction</strong>!"
@@ -740,8 +865,8 @@
 
       <div class="dialogue-line line-vincent" data-speaker="vincent">
         <div class="speaker-meta">
-          <span class="badge badge-vincent">Vincent Chow (税务专家)</span>
-          <span class="action-note">（侧面掌镜，专业顾问视角）</span>
+          <span class="badge badge-vincent">Vincent Chow (税务专家 Tax Professional)</span>
+          <span class="action-note">（朋友 45度侧面掌镜，展现专业合规点评）</span>
         </div>
         <div class="speech-en">
           "From a tax compliance standpoint, tying corporate tax deductibility to bank-channel payroll is a brilliant anti-evasion rule. It eliminates phantom workers, ensures foreign and local workers receive statutory minimum wages, and creates an auditable trail for EPF, SOCSO, and LHDN. And looking at <strong>Change 6: Targeted Corporate Deductions</strong>, employers also get a tax deduction from 2027 to 2028 for repaying full-time employees' <strong>PTPTN student loans</strong>, alongside a <strong>100% Green Technology Investment Tax Allowance</strong> extended until 2030!"
@@ -751,7 +876,7 @@
       <div class="dialogue-line line-wong" data-speaker="wong">
         <div class="speaker-meta">
           <span class="badge badge-wong">Wong Chun Kit (审计师)</span>
-          <span class="action-note">（Jasper 掌镜：特写 Section 13 法条卡）</span>
+          <span class="action-note">（Jasper 掌镜：特写举起 Section 13(1)(a) 卡片）</span>
         </div>
         <div class="speech-en">
           "True, Vincent—but watch out for a hidden tax trap under <strong>Section 13(1)(a) of the Income Tax Act 1967</strong>! When an employer pays an employee’s personal PTPTN debt, it is legally treated as a taxable <strong>pecuniary perquisite</strong> on the employee’s EA Form unless the Ministry of Finance gazettes a specific personal tax exemption order!"
@@ -764,35 +889,76 @@
   <!-- ==================== 第四幕 ==================== -->
   <div class="act-section">
     <div class="act-header">
-      <h2>第四幕：综合影响大总结 (Impact)</h2>
+      <h2>第四幕：对马来西亚个人与企业的综合影响 (Impact on Individuals & Companies)</h2>
       <span class="time-pill">⏱️ 5:35 – 6:30</span>
     </div>
     <div class="act-body">
 
+      <!-- 镜头 12 -->
       <div class="shot-card" data-cam="ang jasper friend">
         <div class="shot-header">
-          <span class="shot-title">🎥 镜头 12：五宫格全员同框 (后期拼合)</span>
+          <span class="shot-title">🎥 镜头 12：五宫格全员同框大总结 (5-Way Grid View)</span>
           <div class="crew-box">
-            <span class="badge badge-cam">大家在各自场地单人拍摄</span>
+            <span class="badge badge-cam">空闲掌镜分配：</span>
+            <span class="badge badge-ang">Ang 拍 Jasper & Samuel</span>
+            <span class="badge badge-jasper">Jasper 拍 Wong</span>
+            <span class="badge badge-vincent">朋友拍 Vincent</span>
+          </div>
+        </div>
+        <div class="how-to-shoot">
+          <strong>📐 怎么拍（详细操作）：</strong>
+          <ul>
+            <li>5个人各自在所属场景拍好正对镜头的单人近景（肩膀以上居中），后期剪辑在 CapCut / Premiere 里把 5 个人的视频拼成一个 <strong>五宫格同框画面（5-Way Grid）</strong>，谁说话谁的格子边框就亮起高亮色（完美命中 Teamwork 全员出镜 4分标准）！</li>
+          </ul>
+          <div class="sfx-gfx-box">
+            <span class="cue-tag tag-sfx">🔊 音效 (SFX)：每切换一个人说话时加清脆提示音 "Ding"</span>
+            <span class="cue-tag tag-gfx">📊 字卡 (GFX)：五宫格下方或中间弹出总分表 (Impact Scorecard)：<br>
+            ✅ <strong>Individuals (+):</strong> Up to RM1.6k Saved, Modern Reliefs, RM750k Home Stamp Duty, RM16b STR/SARA<br>
+            ❌ <strong>Individuals (-):</strong> Frozen Relief Caps, PTPTN Perquisite Uncertainty, 30% Tax >RM1m<br>
+            ✅ <strong>Companies (+):</strong> RM6k MSME Cut, RM32b Loan Guarantees, RM10 P2P Stamp Duty, ACA & Green ITA<br>
+            ❌ <strong>Companies (-):</strong> RM2,000 Min Wage Margin Squeeze, Strict Bank-Payroll Deduction Audit</span>
           </div>
         </div>
       </div>
 
       <div class="dialogue-line line-jasper" data-speaker="jasper">
-        <div class="speaker-meta"><span class="badge badge-jasper">Jasper Chong (M40)</span></div>
-        <div class="speech-en">"So how do these changes affect <strong>Malaysian Individuals</strong> overall? M40 taxpayers gain up to RM1,600 in tax savings, modernised reliefs for AI, pets, and parental care, and over RM11,000 in stamp duty savings on first homes up to RM750,000—while B40 and gig workers benefit from the RM2,000 minimum wage, <strong>RM16 billion in STR and SARA cash aid</strong>, and expanded <em>Lindung Kendiri</em> SOCSO relief."</div>
+        <div class="speaker-meta">
+          <span class="badge badge-jasper">Jasper Chong (M40个人)</span>
+          <span class="action-note">（由空闲的 Ang Eng Jin 掌镜拍摄）</span>
+        </div>
+        <div class="speech-en">
+          "So how do these changes affect <strong>Malaysian Individuals</strong> overall? M40 taxpayers gain up to RM1,600 in tax savings, modernised reliefs for AI, pets, and parental care, and over RM11,000 in stamp duty savings on first homes up to RM750,000—while B40 and gig workers benefit from the RM2,000 minimum wage, <strong>RM16 billion in STR and SARA cash aid</strong>, and expanded <em>Lindung Kendiri</em> SOCSO relief."
+        </div>
       </div>
+
       <div class="dialogue-line line-vincent" data-speaker="vincent">
-        <div class="speaker-meta"><span class="badge badge-vincent">Vincent Chow (税务专家)</span></div>
-        <div class="speech-en">"However, individuals still face frozen medical and lifestyle relief caps amidst high healthcare inflation, potential personal tax liabilities on employer PTPTN repayments, and a heavier 30% tax burden for high earners above RM1 million."</div>
+        <div class="speaker-meta">
+          <span class="badge badge-vincent">Vincent Chow (税务专家 Tax Professional)</span>
+          <span class="action-note">（由协助的朋友掌镜拍摄）</span>
+        </div>
+        <div class="speech-en">
+          "However, individuals still face frozen medical and lifestyle relief caps amidst high healthcare inflation, potential personal tax liabilities on employer PTPTN repayments, and a heavier 30% tax burden for high earners above RM1 million."
+        </div>
       </div>
+
       <div class="dialogue-line line-samuel" data-speaker="samuel">
-        <div class="speaker-meta"><span class="badge badge-samuel">Samuel Fong (老板)</span></div>
-        <div class="speech-en">"And how does it affect <strong>Companies in Malaysia</strong>? Around 300,000 MSMEs enjoy RM6,000 in tax savings, <strong>RM32 billion in government financing guarantees</strong>, a flat RM10 stamp duty on P2P financing, and extended capital allowances to buy local machinery and green technology."</div>
+        <div class="speaker-meta">
+          <span class="badge badge-samuel">Samuel Fong (SME老板)</span>
+          <span class="action-note">（由空闲的 Ang Eng Jin 掌镜拍摄）</span>
+        </div>
+        <div class="speech-en">
+          "And how does it affect <strong>Companies in Malaysia</strong>? Around 300,000 MSMEs enjoy RM6,000 in tax savings, <strong>RM32 billion in government financing guarantees</strong>, a flat RM10 stamp duty on P2P financing, and extended capital allowances to buy local machinery and green technology."
+        </div>
       </div>
+
       <div class="dialogue-line line-wong" data-speaker="wong">
-        <div class="speaker-meta"><span class="badge badge-wong">Wong Chun Kit (审计)</span></div>
-        <div class="speech-en">"Yet labour-intensive companies face margin compression from the RM2,000 and RM2,500 wage floors, alongside strict tax disallowance exposure if they fail to comply with the mandatory bank-channel payroll rule."</div>
+        <div class="speaker-meta">
+          <span class="badge badge-wong">Wong Chun Kit (审计师)</span>
+          <span class="action-note">（由空闲的 Jasper Chong 掌镜拍摄）</span>
+        </div>
+        <div class="speech-en">
+          "Yet labour-intensive companies face margin compression from the RM2,000 and RM2,500 wage floors, alongside strict tax disallowance exposure if they fail to comply with the mandatory bank-channel payroll rule."
+        </div>
       </div>
 
     </div>
@@ -801,37 +967,81 @@
   <!-- ==================== 第五幕 ==================== -->
   <div class="act-section">
     <div class="act-header">
-      <h2>第五幕：2028年四大前瞻建议 (Budget 2028)</h2>
+      <h2>第五幕：2028年财政预算案四大前瞻建议与理由 (Recommendations for Budget 2028)</h2>
       <span class="time-pill">⏱️ 6:30 – 7:45</span>
     </div>
     <div class="act-body">
 
+      <!-- 镜头 13 -->
       <div class="shot-card" data-cam="ang jasper wong samuel friend">
         <div class="shot-header">
-          <span class="shot-title">🎥 镜头 13：动态行走跟拍 (倒退走互拍)</span>
+          <span class="shot-title">🎥 镜头 13：动态行走跟拍 (Walking / Tracking Shots — 一对一倒退走互拍调度)</span>
           <div class="crew-box">
-            <span class="badge badge-cam">互拍：</span>
-            <span class="badge badge-ang">Ang/Jasper互拍</span>
-            <span class="badge badge-wong">Wong/Samuel互拍</span>
+            <span class="badge badge-cam">互拍配对：</span>
+            <span class="badge badge-ang">Ang 拍 Jasper</span>
+            <span class="badge badge-jasper">Jasper 拍 Ang</span>
+            <span class="badge badge-wong">Wong 拍 Samuel</span>
+            <span class="badge badge-vincent">朋友拍 Vincent</span>
+          </div>
+        </div>
+        <div class="how-to-shoot">
+          <strong>📐 怎么拍（详细操作）：</strong>
+          <ul>
+            <li>到走廊、林荫道或开阔步道拍摄。摄影师双手拿稳手机（开启手机自带的防抖运动模式 Action/Steady Mode），站在演员正前方约 1.5 米处，<strong>演员一边往前走一边自信说台词，摄影师同步慢慢往后退着走</strong>！</li>
+            <li><strong>第1段（拍 Jasper 走）：</strong>由 <strong>Ang Eng Jin</strong> 倒退走掌镜拍摄，<strong>Wong Chun Kit</strong> 在旁边帮 Ang 看着身后的路以防绊倒！</li>
+            <li><strong>第2段（拍 Ang 走）：</strong>两人互换！由 <strong>Jasper Chong</strong> 倒退走掌镜拍 Ang。</li>
+            <li><strong>第3段（拍 Samuel 走）：</strong>由 <strong>Wong Chun Kit</strong> 倒退走掌镜拍 Samuel。</li>
+            <li><strong>第4段（拍 Vincent 走）：</strong>由 <strong>协助拍摄的朋友</strong> 在室外街道倒退走掌镜拍摄，4段行走镜头无缝接力剪辑！</li>
+          </ul>
+          <div class="sfx-gfx-box">
+            <span class="cue-tag tag-sfx">🔊 音效 (SFX)：换上节奏积极、充满希望的企业励志背景音乐 (Upbeat Inspiring Corporate Track，音量15%)</span>
+            <span class="cue-tag tag-gfx">📊 字卡 (GFX)：随每人出场依次弹出 4 张建议卡片：<br>
+            ① "2028 Proposal 1 (Individuals): Health Cap RM10k ➔ RM15k & Insurance RM3k ➔ RM5k (12–15% Medical Inflation)"<br>
+            ② "2028 Proposal 2 (Individuals): Child Relief RM2k ➔ RM4k & RM6k Home-Babysitter Deduction"<br>
+            ③ "2028 Proposal 3 (Companies): MSME Paid-up Capital Limit RM2.5m ➔ RM5m & 20% Mid-Tier Tax Band"<br>
+            ④ "2028 Proposal 4 (Companies): 200% Double Tax Deduction on Min Wage Transition & Business AI Subscriptions"</span>
           </div>
         </div>
       </div>
 
       <div class="dialogue-line line-jasper" data-speaker="jasper">
-        <div class="speaker-meta"><span class="badge badge-jasper">Jasper Chong (摄影: Ang 倒退拍)</span></div>
-        <div class="speech-en">"Looking ahead to <strong>Budget 2028</strong>, what else should the government focus on? <strong>First, for Individuals: Increase the Health and Well-Being relief cap from RM10,000 to RM15,000, raise Medical Insurance relief to RM5,000, and restore standalone maternity relief.</strong> <em>The Reason:</em> Malaysia’s medical inflation runs at 12% to 15% annually; raising the cap ensures young families aren't penalised when childbirth hospital bills max out their medical relief!"</div>
+        <div class="speaker-meta">
+          <span class="badge badge-jasper">Jasper Chong (M40个人)</span>
+          <span class="action-note">（摄影师：Ang Eng Jin 倒退走跟拍）</span>
+        </div>
+        <div class="speech-en">
+          "Looking ahead to <strong>Budget 2028</strong>, what else should the government focus on? <strong>First, for Individuals: Increase the Health and Well-Being relief cap from RM10,000 to RM15,000, raise Medical Insurance relief to RM5,000, and restore standalone maternity relief.</strong> <em>The Reason:</em> Malaysia’s medical inflation runs at 12% to 15% annually; raising the cap ensures young families aren't penalised when childbirth hospital bills max out their medical relief!"
+        </div>
       </div>
+
       <div class="dialogue-line line-ang" data-speaker="ang">
-        <div class="speaker-meta"><span class="badge badge-ang">Ang Eng Jin (摄影: Jasper 倒退拍)</span></div>
-        <div class="speech-en">"<strong>Second, for Individuals: Double the standard Child Tax Relief from RM2,000 to RM4,000 per child and allow home-babysitter deductions up to RM6,000.</strong> <em>The Reason:</em> Standard child relief under Section 48 has remained unchanged for over a decade; increasing it directly eases the financial squeeze on dual-income M40 families and boosts female labour force participation."</div>
+        <div class="speaker-meta">
+          <span class="badge badge-ang">Ang Eng Jin (主播)</span>
+          <span class="action-note">（摄影师：Jasper Chong 倒退走跟拍）</span>
+        </div>
+        <div class="speech-en">
+          "<strong>Second, for Individuals: Double the standard Child Tax Relief from RM2,000 to RM4,000 per child and allow home-babysitter deductions up to RM6,000.</strong> <em>The Reason:</em> Standard child relief under Section 48 has remained unchanged for over a decade; increasing it directly eases the financial squeeze on dual-income M40 families and boosts female labour force participation."
+        </div>
       </div>
+
       <div class="dialogue-line line-samuel" data-speaker="samuel">
-        <div class="speaker-meta"><span class="badge badge-samuel">Samuel Fong (摄影: Wong 倒退拍)</span></div>
-        <div class="speech-en">"<strong>Third, for Companies: Raise the MSME qualifying paid-up capital threshold from RM2.5 million to RM5 million and introduce a 20% Mid-Tier Company tax band.</strong> <em>The Reason:</em> Currently, exceeding RM2.5 million in paid-up capital by even RM1 forces a company’s tax rate to jump from 14% and 16% straight to 24%, creating a tax cliff that discourages SMEs from injecting equity to scale up!"</div>
+        <div class="speaker-meta">
+          <span class="badge badge-samuel">Samuel Fong (SME老板)</span>
+          <span class="action-note">（摄影师：Wong Chun Kit 倒退走跟拍）</span>
+        </div>
+        <div class="speech-en">
+          "<strong>Third, for Companies: Raise the MSME qualifying paid-up capital threshold from RM2.5 million to RM5 million and introduce a 20% Mid-Tier Company tax band.</strong> <em>The Reason:</em> Currently, exceeding RM2.5 million in paid-up capital by even RM1 forces a company’s tax rate to jump from 14% and 16% straight to 24%, creating a tax cliff that discourages SMEs from injecting equity to scale up!"
+        </div>
       </div>
+
       <div class="dialogue-line line-vincent" data-speaker="vincent">
-        <div class="speaker-meta"><span class="badge badge-vincent">Vincent Chow (摄影: 朋友倒退拍)</span></div>
-        <div class="speech-en">"<strong>Fourth, for Companies: Grant a 200% Double Tax Deduction on incremental minimum wage transition costs and corporate AI software subscriptions.</strong> <em>The Reason:</em> While individuals received an AI tax relief in Budget 2027, SMEs need direct operating-expense tax incentives to adopt digital productivity tools and absorb the RM2,000 minimum wage without passing price hikes onto consumers!"</div>
+        <div class="speaker-meta">
+          <span class="badge badge-vincent">Vincent Chow (税务专家 Tax Professional)</span>
+          <span class="action-note">（摄影师：朋友在室外倒退走跟拍）</span>
+        </div>
+        <div class="speech-en">
+          "<strong>Fourth, for Companies: Grant a 200% Double Tax Deduction on incremental minimum wage transition costs and corporate AI software subscriptions.</strong> <em>The Reason:</em> While individuals received an AI tax relief in Budget 2027, SMEs need direct operating-expense tax incentives to adopt digital productivity tools and absorb the RM2,000 minimum wage without passing price hikes onto Malaysian consumers!"
+        </div>
       </div>
 
     </div>
@@ -840,23 +1050,48 @@
   <!-- ==================== 第六幕 ==================== -->
   <div class="act-section">
     <div class="act-header">
-      <h2>第六幕：跨屏击掌收尾</h2>
+      <h2>第六幕：跨屏击掌收尾与参考文献 (Outro & APA References)</h2>
       <span class="time-pill">⏱️ 7:45 – 8:00</span>
     </div>
     <div class="act-body">
 
+      <!-- 镜头 14 -->
       <div class="shot-card" data-cam="friend">
         <div class="shot-header">
-          <span class="shot-title">🎥 镜头 14：双屏连线击掌 (固定机位)</span>
+          <span class="shot-title">🎥 镜头 14：双屏连线击掌 + 片尾滚动字幕 (Split-Screen High Five & Credits)</span>
           <div class="crew-box">
-            <span class="badge badge-cam">本地把手机架桌子上，4人向右击掌；专家向左击掌。</span>
+            <span class="badge badge-cam">拍摄方式：</span>
+            <span>本地4人：手机架在桌面/三脚架固定自拍</span>
+            <span class="badge badge-vincent">远程：朋友拍 Vincent</span>
+          </div>
+        </div>
+        <div class="how-to-shoot">
+          <strong>📐 怎么拍（详细操作）：</strong>
+          <ul>
+            <li><strong>左半屏（本地 4 人：Ang, Wong, Jasper, Samuel）：</strong>把手机架在桌子上（或用三脚架固定），4 个人并排站好，齐声说完最后一句台词后，一起把右手伸向<strong>屏幕右侧边缘</strong>做一个击掌（High-Five）定格动作！</li>
+            <li><strong>右半屏（税务专家 Vincent）：</strong>由朋友拍摄，Vincent 说完最后一句台词后，把左手伸向<strong>屏幕左侧边缘</strong>击掌定格。后期剪辑左右一拼，就是完美的跨屏击掌！</li>
+          </ul>
+          <div class="sfx-gfx-box">
+            <span class="cue-tag tag-sfx">🔊 音效 (SFX)：清脆击掌声 "High-Five Slap / Chime!" + 欢快收尾音乐</span>
+            <span class="cue-tag tag-gfx">📊 字卡 (GFX)：画面左侧放 10 秒拍摄搞笑花絮 (Bloopers)，右侧滚动 APA 第7版参考文献 (确保零拼写错误)：<br>
+            • Baker Tilly Malaysia. (2026). <em>2027 Budget Highlights: Personal Income Tax, Corporate Tax & SST</em>.<br>
+            • Deloitte Tax@Hand. (2026). <em>Malaysia: Tax highlights of Budget 2027 include measures intended to attract investment</em>.<br>
+            • Government of Malaysia. (1967). <em>Income Tax Act 1967 (Act 53)</em>.<br>
+            • Ministry of Finance Malaysia. (2026). <em>Touchpoints & Speech Text: Belanjawan 2027 (Second MADANI Budget)</em>.<br>
+            • Panda HRMS. (2026). <em>Malaysia Budget 2027: Key Highlights Every Employer & HR Should Know</em>.<br>
+            • PwC Malaysia. (2026). <em>Budget 2027: Keeping on Course for Sustainable Growth – Tax & Business Highlights</em>.<br>
+            • YYC Advisors. (2026). <em>Budget 2027 Malaysia: Individual Tax Reliefs & New Rates (YA 2027)</em>.</span>
           </div>
         </div>
       </div>
 
       <div class="dialogue-line line-all" data-speaker="all">
-        <div class="speaker-meta"><span class="badge badge-all">🌟 5人齐声 (All Together)</span></div>
-        <div class="speech-en">"Work smart, stay tax-compliant, and see you in Budget 2028! Thank you!"</div>
+        <div class="speaker-meta">
+          <span class="badge badge-all">🌟 5人齐声合诵 (All 5 Members Together)</span>
+        </div>
+        <div class="speech-en">
+          "Work smart, stay tax-compliant, and see you in Budget 2028! Thank you!"
+        </div>
       </div>
 
     </div>
@@ -865,6 +1100,7 @@
 </div>
 
 <script>
+  // 折叠/展开 顶部筛选面板
   function toggleFilters() {
     const content = document.getElementById('filterContent');
     const icon = document.getElementById('filterIcon');
@@ -876,37 +1112,37 @@
       header.classList.add('active');
     } else {
       content.style.display = 'none';
-      icon.innerText = '🔽 点击展开菜单';
+      icon.innerText = '🔽 展开菜单';
       header.classList.remove('active');
     }
   }
 
+  // 重置显示全部
   function resetFilter() {
     document.querySelectorAll('.dialogue-line, .shot-card').forEach(el => {
       el.classList.remove('dimmed', 'highlight-cam');
     });
-    const content = document.getElementById('filterContent');
-    if (window.innerWidth < 768 && content.style.display !== 'none') {
-        toggleFilters();
-    }
+    collapseMenuOnMobile();
   }
 
+  // 模式1：按演员台词过滤
   function filterActor(member) {
     document.querySelectorAll('.dialogue-line').forEach(line => {
-      line.classList.remove('dimmed'); 
+      line.classList.remove('dimmed');
       const speaker = line.getAttribute('data-speaker');
       if (member !== 'all' && speaker !== member && speaker !== 'all') {
         line.classList.add('dimmed');
       }
     });
-    document.querySelectorAll('.shot-card').forEach(card => card.classList.remove('highlight-cam'));
-    if(member !== 'all') collapseMenuOnMobile();
+    document.querySelectorAll('.shot-card').forEach(card => card.classList.remove('highlight-cam', 'dimmed'));
+    if (member !== 'all') collapseMenuOnMobile();
   }
 
+  // 模式2：按空闲摄影师高亮负责拍的镜头
   function filterCam(cameraman) {
     document.querySelectorAll('.dialogue-line').forEach(line => line.classList.remove('dimmed'));
     document.querySelectorAll('.shot-card').forEach(card => {
-      card.classList.remove('dimmed', 'highlight-cam'); 
+      card.classList.remove('dimmed', 'highlight-cam');
       const cams = card.getAttribute('data-cam') || '';
       if (cams.includes(cameraman)) {
         card.classList.add('highlight-cam');
@@ -917,11 +1153,12 @@
     collapseMenuOnMobile();
   }
   
+  // 手机端点选按钮后自动收起顶部菜单，腾出屏幕空间
   function collapseMenuOnMobile() {
-      if (window.innerWidth < 768) {
-          const content = document.getElementById('filterContent');
-          if (content.style.display !== 'none') toggleFilters();
-      }
+    if (window.innerWidth < 768) {
+      const content = document.getElementById('filterContent');
+      if (content.style.display !== 'none') toggleFilters();
+    }
   }
 </script>
 
